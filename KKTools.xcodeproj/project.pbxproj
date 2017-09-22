@@ -7,15 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D0AF0831F09E25F00B42F99 /* TBCityIconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0AF07E1F09E25F00B42F99 /* TBCityIconFont.m */; };
+		7D0AF0841F09E25F00B42F99 /* TBCityIconInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0AF0801F09E25F00B42F99 /* TBCityIconInfo.m */; };
+		7D0AF0851F09E25F00B42F99 /* UIImage+TBCityIconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0AF0821F09E25F00B42F99 /* UIImage+TBCityIconFont.m */; };
 		7D2992D01F04D52200CECAB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2992CF1F04D52200CECAB6 /* main.m */; };
 		7D2992D31F04D52200CECAB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2992D21F04D52200CECAB6 /* AppDelegate.m */; };
 		7D2992D61F04D52200CECAB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2992D51F04D52200CECAB6 /* ViewController.m */; };
 		7D2992D91F04D52200CECAB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2992D71F04D52200CECAB6 /* Main.storyboard */; };
 		7D2992DB1F04D52200CECAB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D2992DA1F04D52200CECAB6 /* Assets.xcassets */; };
 		7D2992DE1F04D52200CECAB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2992DC1F04D52200CECAB6 /* LaunchScreen.storyboard */; };
+		7D2992FF1F0628B900CECAB6 /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2992FE1F0628B900CECAB6 /* person.png */; };
+		7D3183B21F5D651B00CCE347 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183AF1F5D651B00CCE347 /* DeviceInfo.m */; };
+		7D3183B31F5D651B00CCE347 /* DeviceIp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183B11F5D651B00CCE347 /* DeviceIp.m */; };
+		7D3183C71F5D654C00CCE347 /* KKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183B61F5D654C00CCE347 /* KKLabel.m */; };
+		7D3183C81F5D654C00CCE347 /* KKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183B81F5D654C00CCE347 /* KKTextField.m */; };
+		7D3183C91F5D654C00CCE347 /* NSArray+Value.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183BA1F5D654C00CCE347 /* NSArray+Value.m */; };
+		7D3183CA1F5D654C00CCE347 /* UIColor+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183BC1F5D654C00CCE347 /* UIColor+X.m */; };
+		7D3183CB1F5D654C00CCE347 /* UIImage+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183BE1F5D654C00CCE347 /* UIImage+X.m */; };
+		7D3183CC1F5D654C00CCE347 /* UILabel+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183C01F5D654C00CCE347 /* UILabel+X.m */; };
+		7D3183CD1F5D654C00CCE347 /* UITextField+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183C21F5D654C00CCE347 /* UITextField+X.m */; };
+		7D3183CE1F5D654C00CCE347 /* UIView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183C41F5D654C00CCE347 /* UIView+X.m */; };
+		7D3183CF1F5D654C00CCE347 /* UIViewController+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183C61F5D654C00CCE347 /* UIViewController+X.m */; };
+		7D3183D41F5D656200CCE347 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183D11F5D656200CCE347 /* BaseTabBarController.m */; };
+		7D3183D51F5D656200CCE347 /* KKAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183D31F5D656200CCE347 /* KKAppHelper.m */; };
+		7D72B9621F5FF68D00F42949 /* NSString+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D72B9611F5FF68D00F42949 /* NSString+X.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D0AF07D1F09E25F00B42F99 /* TBCityIconFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCityIconFont.h; sourceTree = "<group>"; };
+		7D0AF07E1F09E25F00B42F99 /* TBCityIconFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCityIconFont.m; sourceTree = "<group>"; };
+		7D0AF07F1F09E25F00B42F99 /* TBCityIconInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCityIconInfo.h; sourceTree = "<group>"; };
+		7D0AF0801F09E25F00B42F99 /* TBCityIconInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCityIconInfo.m; sourceTree = "<group>"; };
+		7D0AF0811F09E25F00B42F99 /* UIImage+TBCityIconFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TBCityIconFont.h"; sourceTree = "<group>"; };
+		7D0AF0821F09E25F00B42F99 /* UIImage+TBCityIconFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TBCityIconFont.m"; sourceTree = "<group>"; };
 		7D2992CB1F04D52200CECAB6 /* KKTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D2992CF1F04D52200CECAB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7D2992D11F04D52200CECAB6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +50,38 @@
 		7D2992DA1F04D52200CECAB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D2992DD1F04D52200CECAB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D2992DF1F04D52200CECAB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D2992FE1F0628B900CECAB6 /* person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person.png; sourceTree = "<group>"; };
+		7D3183A11F5D62F500CCE347 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		7D3183A31F5D630A00CCE347 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7D3183AE1F5D651B00CCE347 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
+		7D3183AF1F5D651B00CCE347 /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
+		7D3183B01F5D651B00CCE347 /* DeviceIp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceIp.h; sourceTree = "<group>"; };
+		7D3183B11F5D651B00CCE347 /* DeviceIp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceIp.m; sourceTree = "<group>"; };
+		7D3183B51F5D654C00CCE347 /* KKLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLabel.h; sourceTree = "<group>"; };
+		7D3183B61F5D654C00CCE347 /* KKLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLabel.m; sourceTree = "<group>"; };
+		7D3183B71F5D654C00CCE347 /* KKTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKTextField.h; sourceTree = "<group>"; };
+		7D3183B81F5D654C00CCE347 /* KKTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKTextField.m; sourceTree = "<group>"; };
+		7D3183B91F5D654C00CCE347 /* NSArray+Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Value.h"; sourceTree = "<group>"; };
+		7D3183BA1F5D654C00CCE347 /* NSArray+Value.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Value.m"; sourceTree = "<group>"; };
+		7D3183BB1F5D654C00CCE347 /* UIColor+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+X.h"; sourceTree = "<group>"; };
+		7D3183BC1F5D654C00CCE347 /* UIColor+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+X.m"; sourceTree = "<group>"; };
+		7D3183BD1F5D654C00CCE347 /* UIImage+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+X.h"; sourceTree = "<group>"; };
+		7D3183BE1F5D654C00CCE347 /* UIImage+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+X.m"; sourceTree = "<group>"; };
+		7D3183BF1F5D654C00CCE347 /* UILabel+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+X.h"; sourceTree = "<group>"; };
+		7D3183C01F5D654C00CCE347 /* UILabel+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+X.m"; sourceTree = "<group>"; };
+		7D3183C11F5D654C00CCE347 /* UITextField+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+X.h"; sourceTree = "<group>"; };
+		7D3183C21F5D654C00CCE347 /* UITextField+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+X.m"; sourceTree = "<group>"; };
+		7D3183C31F5D654C00CCE347 /* UIView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+X.h"; sourceTree = "<group>"; };
+		7D3183C41F5D654C00CCE347 /* UIView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+X.m"; sourceTree = "<group>"; };
+		7D3183C51F5D654C00CCE347 /* UIViewController+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+X.h"; sourceTree = "<group>"; };
+		7D3183C61F5D654C00CCE347 /* UIViewController+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+X.m"; sourceTree = "<group>"; };
+		7D3183D01F5D656200CCE347 /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
+		7D3183D11F5D656200CCE347 /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
+		7D3183D21F5D656200CCE347 /* KKAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAppHelper.h; sourceTree = "<group>"; };
+		7D3183D31F5D656200CCE347 /* KKAppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAppHelper.m; sourceTree = "<group>"; };
+		7D3183D61F5D65FD00CCE347 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		7D72B9601F5FF68D00F42949 /* NSString+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+X.h"; sourceTree = "<group>"; };
+		7D72B9611F5FF68D00F42949 /* NSString+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+X.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,11 +95,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D0AF07C1F09E25F00B42F99 /* IconFont */ = {
+			isa = PBXGroup;
+			children = (
+				7D0AF07D1F09E25F00B42F99 /* TBCityIconFont.h */,
+				7D0AF07E1F09E25F00B42F99 /* TBCityIconFont.m */,
+				7D0AF07F1F09E25F00B42F99 /* TBCityIconInfo.h */,
+				7D0AF0801F09E25F00B42F99 /* TBCityIconInfo.m */,
+				7D0AF0811F09E25F00B42F99 /* UIImage+TBCityIconFont.h */,
+				7D0AF0821F09E25F00B42F99 /* UIImage+TBCityIconFont.m */,
+			);
+			path = IconFont;
+			sourceTree = "<group>";
+		};
 		7D2992C21F04D52200CECAB6 = {
 			isa = PBXGroup;
 			children = (
+				7D0AF07C1F09E25F00B42F99 /* IconFont */,
+				7D2992FE1F0628B900CECAB6 /* person.png */,
 				7D2992CD1F04D52200CECAB6 /* KKTools */,
 				7D2992CC1F04D52200CECAB6 /* Products */,
+				7D3183A01F5D62F500CCE347 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +130,7 @@
 		7D2992CD1F04D52200CECAB6 /* KKTools */ = {
 			isa = PBXGroup;
 			children = (
+				7D3183AC1F5D651300CCE347 /* CommonTools */,
 				7D2992D11F04D52200CECAB6 /* AppDelegate.h */,
 				7D2992D21F04D52200CECAB6 /* AppDelegate.m */,
 				7D2992D41F04D52200CECAB6 /* ViewController.h */,
@@ -77,6 +150,67 @@
 				7D2992CF1F04D52200CECAB6 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7D3183A01F5D62F500CCE347 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D3183A31F5D630A00CCE347 /* SystemConfiguration.framework */,
+				7D3183A11F5D62F500CCE347 /* CoreTelephony.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D3183AC1F5D651300CCE347 /* CommonTools */ = {
+			isa = PBXGroup;
+			children = (
+				7D3183D21F5D656200CCE347 /* KKAppHelper.h */,
+				7D3183D31F5D656200CCE347 /* KKAppHelper.m */,
+				7D3183D01F5D656200CCE347 /* BaseTabBarController.h */,
+				7D3183D11F5D656200CCE347 /* BaseTabBarController.m */,
+				7D3183B41F5D653D00CCE347 /* Category */,
+				7D3183AD1F5D651B00CCE347 /* Device */,
+				7D3183D61F5D65FD00CCE347 /* PrefixHeader.pch */,
+			);
+			path = CommonTools;
+			sourceTree = "<group>";
+		};
+		7D3183AD1F5D651B00CCE347 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				7D3183AE1F5D651B00CCE347 /* DeviceInfo.h */,
+				7D3183AF1F5D651B00CCE347 /* DeviceInfo.m */,
+				7D3183B01F5D651B00CCE347 /* DeviceIp.h */,
+				7D3183B11F5D651B00CCE347 /* DeviceIp.m */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		7D3183B41F5D653D00CCE347 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7D3183B51F5D654C00CCE347 /* KKLabel.h */,
+				7D3183B61F5D654C00CCE347 /* KKLabel.m */,
+				7D3183BF1F5D654C00CCE347 /* UILabel+X.h */,
+				7D3183C01F5D654C00CCE347 /* UILabel+X.m */,
+				7D3183BB1F5D654C00CCE347 /* UIColor+X.h */,
+				7D3183BC1F5D654C00CCE347 /* UIColor+X.m */,
+				7D3183C31F5D654C00CCE347 /* UIView+X.h */,
+				7D3183C41F5D654C00CCE347 /* UIView+X.m */,
+				7D3183BD1F5D654C00CCE347 /* UIImage+X.h */,
+				7D3183BE1F5D654C00CCE347 /* UIImage+X.m */,
+				7D3183B71F5D654C00CCE347 /* KKTextField.h */,
+				7D3183B81F5D654C00CCE347 /* KKTextField.m */,
+				7D3183C11F5D654C00CCE347 /* UITextField+X.h */,
+				7D3183C21F5D654C00CCE347 /* UITextField+X.m */,
+				7D72B9601F5FF68D00F42949 /* NSString+X.h */,
+				7D72B9611F5FF68D00F42949 /* NSString+X.m */,
+				7D3183B91F5D654C00CCE347 /* NSArray+Value.h */,
+				7D3183BA1F5D654C00CCE347 /* NSArray+Value.m */,
+				7D3183C51F5D654C00CCE347 /* UIViewController+X.h */,
+				7D3183C61F5D654C00CCE347 /* UIViewController+X.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +274,7 @@
 				7D2992DE1F04D52200CECAB6 /* LaunchScreen.storyboard in Resources */,
 				7D2992DB1F04D52200CECAB6 /* Assets.xcassets in Resources */,
 				7D2992D91F04D52200CECAB6 /* Main.storyboard in Resources */,
+				7D2992FF1F0628B900CECAB6 /* person.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,9 +285,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D3183D41F5D656200CCE347 /* BaseTabBarController.m in Sources */,
 				7D2992D61F04D52200CECAB6 /* ViewController.m in Sources */,
 				7D2992D31F04D52200CECAB6 /* AppDelegate.m in Sources */,
 				7D2992D01F04D52200CECAB6 /* main.m in Sources */,
+				7D3183CE1F5D654C00CCE347 /* UIView+X.m in Sources */,
+				7D0AF0841F09E25F00B42F99 /* TBCityIconInfo.m in Sources */,
+				7D3183CC1F5D654C00CCE347 /* UILabel+X.m in Sources */,
+				7D3183B21F5D651B00CCE347 /* DeviceInfo.m in Sources */,
+				7D3183C91F5D654C00CCE347 /* NSArray+Value.m in Sources */,
+				7D3183CF1F5D654C00CCE347 /* UIViewController+X.m in Sources */,
+				7D3183B31F5D651B00CCE347 /* DeviceIp.m in Sources */,
+				7D3183C81F5D654C00CCE347 /* KKTextField.m in Sources */,
+				7D3183CA1F5D654C00CCE347 /* UIColor+X.m in Sources */,
+				7D0AF0831F09E25F00B42F99 /* TBCityIconFont.m in Sources */,
+				7D72B9621F5FF68D00F42949 /* NSString+X.m in Sources */,
+				7D3183CB1F5D654C00CCE347 /* UIImage+X.m in Sources */,
+				7D0AF0851F09E25F00B42F99 /* UIImage+TBCityIconFont.m in Sources */,
+				7D3183C71F5D654C00CCE347 /* KKLabel.m in Sources */,
+				7D3183CD1F5D654C00CCE347 /* UITextField+X.m in Sources */,
+				7D3183D51F5D656200CCE347 /* KKAppHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -262,7 +414,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -274,6 +426,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/zving/Desktop/KKTools/KKTools/CommonTools/PrefixHeader.pch;
 				INFOPLIST_FILE = KKTools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zving.KKTools;
@@ -285,6 +439,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/zving/Desktop/KKTools/KKTools/CommonTools/PrefixHeader.pch;
 				INFOPLIST_FILE = KKTools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zving.KKTools;
@@ -302,7 +458,7 @@
 				7D2992E11F04D52200CECAB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		7D2992E21F04D52200CECAB6 /* Build configuration list for PBXNativeTarget "KKTools" */ = {
 			isa = XCConfigurationList;
@@ -311,6 +467,7 @@
 				7D2992E41F04D52200CECAB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
