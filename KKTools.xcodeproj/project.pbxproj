@@ -16,7 +16,6 @@
 		7D2992D91F04D52200CECAB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2992D71F04D52200CECAB6 /* Main.storyboard */; };
 		7D2992DB1F04D52200CECAB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D2992DA1F04D52200CECAB6 /* Assets.xcassets */; };
 		7D2992DE1F04D52200CECAB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2992DC1F04D52200CECAB6 /* LaunchScreen.storyboard */; };
-		7D2992FF1F0628B900CECAB6 /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2992FE1F0628B900CECAB6 /* person.png */; };
 		7D3183B21F5D651B00CCE347 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183AF1F5D651B00CCE347 /* DeviceInfo.m */; };
 		7D3183B31F5D651B00CCE347 /* DeviceIp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183B11F5D651B00CCE347 /* DeviceIp.m */; };
 		7D3183C71F5D654C00CCE347 /* KKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183B61F5D654C00CCE347 /* KKLabel.m */; };
@@ -50,7 +49,6 @@
 		7D2992DA1F04D52200CECAB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D2992DD1F04D52200CECAB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D2992DF1F04D52200CECAB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7D2992FE1F0628B900CECAB6 /* person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person.png; sourceTree = "<group>"; };
 		7D3183A11F5D62F500CCE347 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		7D3183A31F5D630A00CCE347 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7D3183AE1F5D651B00CCE347 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				7D0AF07C1F09E25F00B42F99 /* IconFont */,
-				7D2992FE1F0628B900CECAB6 /* person.png */,
 				7D2992CD1F04D52200CECAB6 /* KKTools */,
 				7D2992CC1F04D52200CECAB6 /* Products */,
 				7D3183A01F5D62F500CCE347 /* Frameworks */,
@@ -274,7 +271,6 @@
 				7D2992DE1F04D52200CECAB6 /* LaunchScreen.storyboard in Resources */,
 				7D2992DB1F04D52200CECAB6 /* Assets.xcassets in Resources */,
 				7D2992D91F04D52200CECAB6 /* Main.storyboard in Resources */,
-				7D2992FF1F0628B900CECAB6 /* person.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
