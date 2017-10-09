@@ -24,11 +24,14 @@ _Pragma("clang diagnostic pop") \
 #import <StoreKit/StoreKit.h>
 
 @implementation KKAppHelper
-
+#pragma mark----- 系统设置
 + (void)prohibitAppSleep{
     [UIApplication sharedApplication].idleTimerDisabled = YES;
 }
 
++ (void)setBrightness:(CGFloat)brightness{
+    [[UIScreen mainScreen] setBrightness:brightness];
+}
 + (void)goToAppSetting{
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:^(BOOL success) {
         
@@ -76,7 +79,7 @@ _Pragma("clang diagnostic pop") \
     } 
     return viewController;
 }
-
+#pragma mark----- 字符串处理
 + (NSString*)reverseWordsInString:(NSString*)str {
     NSMutableString *reverString = [NSMutableString stringWithCapacity:str.length];
     [str enumerateSubstringsInRange:NSMakeRange(0, str.length) options:NSStringEnumerationReverse | NSStringEnumerationByComposedCharacterSequences  usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
@@ -159,7 +162,7 @@ _Pragma("clang diagnostic pop") \
         );
     }
 }
-
+#pragma mark----- 权限判断
 + (void)obtainJurisdictionStatus{
     if ([CLLocationManager authorizationStatus] ==kCLAuthorizationStatusDenied) {
         NSLog(@"没有定位权限");
@@ -180,9 +183,8 @@ _Pragma("clang diagnostic pop") \
     }];
 }
 
-+(void)setBrightness:(CGFloat)brightness{
-    [[UIScreen mainScreen] setBrightness:brightness];
-}
+
+#pragma mark----- 上整和下整
 + (int)maxIntWithFloat:(CGFloat)floatValue{
     return ceil(floatValue);//(int)round(floatValue));
 }
@@ -273,10 +275,46 @@ _Pragma("clang diagnostic pop") \
     });
     dispatch_resume(timer);
 }
+#pragma mark----- 富文本处理
++ (NSMutableAttributedString *)drawDeleteLabWithString:(NSString *)str location:(NSInteger)location length:(NSInteger)length color:(UIColor *)color{
+    NSMutableAttributedString *attritu = [[NSMutableAttributedString alloc] initWithString:str];
+    
+    [attritu addAttributes:@{
+                             NSStrikethroughStyleAttributeName:@(NSUnderlineStyleSingle),
+                             NSStrikethroughColorAttributeName:
+                                 color,
+                             NSBaselineOffsetAttributeName:
+                                 @(0),
+                             } range:NSMakeRange(location, length)];
+    
+    return attritu;
+}
++ (NSAttributedString *)setLabelWithSpace:(CGFloat)space withString:(NSString*)str withFont:(UIFont*)font {
+    if (str == nil || [str isEqualToString:@""]) {
+        return [[NSAttributedString alloc]initWithString:@""];
+    }
+    NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
+    paraStyle.lineBreakMode = NSLineBreakByCharWrapping;
+    paraStyle.alignment = NSTextAlignmentLeft;
+    paraStyle.lineSpacing = space; //设置行间距
+    paraStyle.hyphenationFactor = 1.0;
+    paraStyle.firstLineHeadIndent = 0.0;
+    paraStyle.paragraphSpacingBefore = 0.0;
+    paraStyle.headIndent = 0;
+    paraStyle.tailIndent = 0;
+    NSDictionary *dic = @{NSFontAttributeName:font, NSParagraphStyleAttributeName:paraStyle};
+    NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:str attributes:dic];
+    return attributeStr;
+}
++ (NSAttributedString *)changeToAttributeStringWithHtmlStr:(NSString *)htmlStr{
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData: [htmlStr dataUsingEncoding:NSUnicodeStringEncoding] options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes: nil error: nil];
+    return attributedString;
+}
+#pragma mark----- 设置导航和状态栏
 + (void)setNavigationStyle{
     [[UINavigationBar appearance] setBarTintColor:[UIColor blueColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:21],NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
+//    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
     [UINavigationBar appearance].barStyle = UIBarStyleBlack;
 }
@@ -288,10 +326,7 @@ _Pragma("clang diagnostic pop") \
         statusBar.backgroundColor = color;
     }
 }
-+ (NSAttributedString *)changeToAttributeStringWithHtmlStr:(NSString *)htmlStr{
-    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData: [htmlStr dataUsingEncoding:NSUnicodeStringEncoding] options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes: nil error: nil];
-    return attributedString;
-}
+
 + (void)forbidReRespond:(id)respond{
     
     // UIView有个属性叫做exclusiveTouch，设置为YES后，其响应事件会和其他view互斥(有其他view事件响应的时候点击它不起作用)
@@ -322,7 +357,7 @@ _Pragma("clang diagnostic pop") \
         // 网络请求二
 //        [WebClick getDataSuccess:getBigTypeRM onSuccess:^(ResponseModel *model) {
 //            dispatch_group_leave(group);
-//        }                                  failure:^(NSString *errorString) {
+//        } failure:^(NSString *errorString) {
 //            dispatch_group_leave(group);
 //        }];
     });
@@ -360,33 +395,32 @@ _Pragma("clang diagnostic pop") \
     });
 }
 + (void)fingerPrintWithReason:(NSString *)reason result:(void (^)(BOOL success, NSError *error))result{
-    if ([UIDevice currentDevice].systemVersion.doubleValue > 8.00) {
-        LAContext *context = [[LAContext alloc]init];
+    
+    if (@available(iOS 8.0, *)) {
+        LAContext *context = [[LAContext alloc] init];
+        NSString *localizedReason = @"指纹登录";
+        if (@available(iOS 11.0, *)) {
+            if (context.biometryType == LABiometryTypeTouchID) {
+            }else if (context.biometryType == LABiometryTypeFaceID){
+                localizedReason = @"Face ID登录";
+            }
+        } else {
+            // Fallback on earlier versions
+        }
         if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:nil]) {
-            [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:reason reply:^(BOOL success, NSError * _Nullable error) {
-                if (result) {
-                    result(success,error);
+            [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:localizedReason reply:^(BOOL success, NSError * _Nullable error) {
+                if (success) {
+                    NSLog(@"--------识别成功");
+                }else{
+                    if (error.code != 2) {
+                        
+                    }
                 }
             }];
         }
-    }else{
-        result(NO,nil);
+    }else {
+        NSLog(@"你的设备不支持指纹识别");
     }
-}
-    
-+ (NSAttributedString *)setLabelWithSpace:(CGFloat)space withString:(NSString*)str withFont:(UIFont*)font {
-    NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
-    paraStyle.lineBreakMode = NSLineBreakByCharWrapping;
-    paraStyle.alignment = NSTextAlignmentLeft;
-    paraStyle.lineSpacing = space; //设置行间距
-    paraStyle.hyphenationFactor = 1.0;
-    paraStyle.firstLineHeadIndent = 0.0;
-    paraStyle.paragraphSpacingBefore = 0.0;
-    paraStyle.headIndent = 0;
-    paraStyle.tailIndent = 0;
-    NSDictionary *dic = @{NSFontAttributeName:font, NSParagraphStyleAttributeName:paraStyle};
-    NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:str attributes:dic];
-    return attributeStr;
 }
 
 + (void)judgeSystemVersion{

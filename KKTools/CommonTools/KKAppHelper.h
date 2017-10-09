@@ -185,6 +185,35 @@
 + (void)startCountDownWithButton:(UIButton *)button withColor:(UIColor *)color resendColor:(UIColor *)resendColor withCountDownTime:(int)countDownTime;
 
 /**
+ 绘制带删除线的富文本
+
+ @param str 原文本
+ @param location 删除线位置
+ @param length 删除线长度
+ @param color 删除线颜色
+ @return 处理后的富文本
+ */
++ (NSMutableAttributedString *)drawDeleteLabWithString:(NSString *)str location:(NSInteger)location length:(NSInteger)length color:(UIColor *)color;
+
+/**
+ 把文字转化成有行间距的富文本
+ 
+ @param space 行间距
+ @param str 原文本
+ @param font 字体
+ @return 处理后的富文本
+ */
++ (NSAttributedString *)setLabelWithSpace:(CGFloat)space withString:(NSString*)str withFont:(UIFont*)font;
+
+/**
+ htmlString转NSAttributedString
+ 
+ @param htmlStr HTML字符串
+ @return 处理后的富文本
+ */
++ (NSAttributedString *)changeToAttributeStringWithHtmlStr:(NSString *)htmlStr;
+
+/**
  设置导航栏样式（返回按钮的样式，颜色，字体大小）
  */
 + (void)setNavigationStyle;
@@ -195,14 +224,6 @@
  @param color <#color description#>
  */
 + (void)setStatusBarBackgroundColor:(UIColor *)color;
-
-/**
- htmlString转NSAttributedString
-
- @param htmlStr <#htmlStr description#>
- @return <#return value description#>
- */
-+ (NSAttributedString *)changeToAttributeStringWithHtmlStr:(NSString *)htmlStr;
 
 /**
  禁止多个事件同时响应
@@ -231,16 +252,6 @@
  */
 + (void)fingerPrintWithReason:(NSString *)reason result:(void (^)(BOOL success, NSError *error))result;
     
-/**
- 把文字转化成有行间距的富文本
- 
- @param space 行间距
- @param str 原文本
- @param font 字体
- @return <#return value description#>
- */
-+ (NSAttributedString *)setLabelWithSpace:(CGFloat)space withString:(NSString*)str withFont:(UIFont*)font;
-
 /**
  判断系统版本
  */
