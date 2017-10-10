@@ -59,4 +59,52 @@
  */
 - (BOOL)isDate;
 
+/**
+ 是否包含中文
+
+ @return <#return value description#>
+ */
+- (BOOL)isHasChinese;
+
+/**
+ 是否是英文和数字
+
+ @return <#return value description#>
+ */
+- (BOOL)isEnglishOrNumber;
+
+/**
+ 获取汉字的拼音
+ 
+ @return <#return value description#>
+ */
+- (NSString *)transformToPhonetic;
+
+/**
+ 字符串反转
+ 
+ @return <#return value description#>
+ */
+- (NSString*)reverseWords;
+
+/**
+ 首字母大写
+ 
+ @return <#return value description#>
+ */
+- (NSString *)capitalFirstLetter;
+
+/**
+ 删除所有空格
+
+ @return <#return value description#>
+ */
+- (NSString *)deleteAllWhiteSpace;
+
+/**
+ 删除首尾空格
+
+ @return <#return value description#>
+ */
+- (NSString *)deleteFirstAndLastWhiteSpace;
 @end

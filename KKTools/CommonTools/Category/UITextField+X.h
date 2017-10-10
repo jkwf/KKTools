@@ -21,4 +21,9 @@
  @param index <#index description#>
  */
 - (void)cursorLocationWithIndex:(NSInteger)index;
+
+/**
+ 修改占位图位置
+ */
+- (void)changeContentPosition;
 @end

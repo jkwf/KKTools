@@ -89,29 +89,6 @@
 + (void)deviceHasFixApplications;
 
 /**
- 获取汉字的拼音
-
- @param chinese <#chinese description#>
- @return <#return value description#>
- */
-+ (NSString *)transform:(NSString *)chinese;
-
-/**
- 字符串反转
-
- @param str <#str description#>
- @return <#return value description#>
- */
-+ (NSString*)reverseWordsInString:(NSString*)str;
-
-/**
- 首字母大写
-
- @param string <#string description#>
- @return <#return value description#>
- */
-+ (NSString *)capitalFirstLetterWithString:(NSString *)string;
-/**
  判断设备权限
  */
 + (void)obtainJurisdictionStatus;
@@ -245,13 +222,24 @@
 + (void)solveOpenUrlDelayWithUrlStr:(NSString *)urlStr;
 
 /**
- 验证指纹结果
+ 生物识别
 
- @param reason <#reason description#>
- @param result <#result description#>
+ @param result 识别结果
  */
-+ (void)fingerPrintWithReason:(NSString *)reason result:(void (^)(BOOL success, NSError *error))result;
-    
++ (void)biologicalRecognitionResult:(void (^)(BOOL success, NSError *error))result;
+
+/**
+ 结束应用
+ */
++ (void)exitApplication;
+
+/**
+ 保存图片到相册
+
+ @param imageName 图片名
+ @param completionHandler 保存回调
+ */
++ (void)saveImageToAlbumWithImageName:(NSString *)imageName completionHandler:(void(^)(BOOL success, NSError * error))completionHandler;
 /**
  判断系统版本
  */

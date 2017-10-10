@@ -18,4 +18,11 @@
     UITextPosition *end = [self positionFromPosition:start offset:range.length];
     [self setSelectedTextRange:[self textRangeFromPosition:start toPosition:end]];
 }
+//修改默认占位符位置
+- (void)changeContentPosition{
+    //垂直
+    self.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
+    //水平
+    self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+}
 @end

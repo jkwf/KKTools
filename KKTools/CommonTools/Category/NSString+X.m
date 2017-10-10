@@ -41,4 +41,51 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",@"^\\d{4}-\\d{1,2}-\\d{1,2}"];
     return [predicate evaluateWithObject:self];
 }
+- (BOOL)isEnglishOrNumber{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[A-Za-z0-9]"];
+    return [predicate evaluateWithObject:self];
+}
+- (BOOL)isHasChinese{
+    NSString *match=@"(^[\u4e00-\u9fa5]+$)";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF matches %@", match];
+    return [predicate evaluateWithObject:self];
+}
+
+#pragma mark----- 字符串处理
+- (NSString*)reverseWords {
+    NSMutableString *reverString = [NSMutableString stringWithCapacity:self.length];
+    [self enumerateSubstringsInRange:NSMakeRange(0, self.length) options:NSStringEnumerationReverse | NSStringEnumerationByComposedCharacterSequences  usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
+        [reverString appendString:substring];
+    }];
+    return reverString;
+}
+
+- (NSString *)transformToPhonetic {
+    //将NSString装换成NSMutableString
+    NSMutableString *pinyin = [self mutableCopy];
+    //将汉字转换为拼音(带音标)
+    CFStringTransform((__bridge CFMutableStringRef)pinyin, NULL, kCFStringTransformMandarinLatin, NO);
+    
+    //去掉拼音的音标
+    CFStringTransform((__bridge CFMutableStringRef)pinyin, NULL, kCFStringTransformStripCombiningMarks, NO);
+    
+    //返回最近结果
+    return pinyin;
+}
+- (NSString *)capitalFirstLetter{
+    NSString *resultStr;
+    if (self && self.length > 0) {
+        resultStr = [self stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[self substringToIndex:1] capitalizedString]];
+    }
+    return resultStr;
+}
+
+- (NSString *)deleteAllWhiteSpace{
+    return [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+}
+
+- (NSString *)deleteFirstAndLastWhiteSpace{
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+
 @end

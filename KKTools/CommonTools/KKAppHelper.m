@@ -79,34 +79,7 @@ _Pragma("clang diagnostic pop") \
     } 
     return viewController;
 }
-#pragma mark----- 字符串处理
-+ (NSString*)reverseWordsInString:(NSString*)str {
-    NSMutableString *reverString = [NSMutableString stringWithCapacity:str.length];
-    [str enumerateSubstringsInRange:NSMakeRange(0, str.length) options:NSStringEnumerationReverse | NSStringEnumerationByComposedCharacterSequences  usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
-        [reverString appendString:substring];
-    }];
-    return reverString;
-}
 
-+ (NSString *)transform:(NSString *)chinese {
-    //将NSString装换成NSMutableString
-    NSMutableString *pinyin = [chinese mutableCopy];
-    //将汉字转换为拼音(带音标)
-    CFStringTransform((__bridge CFMutableStringRef)pinyin, NULL, kCFStringTransformMandarinLatin, NO);
-   
-    //去掉拼音的音标
-    CFStringTransform((__bridge CFMutableStringRef)pinyin, NULL, kCFStringTransformStripCombiningMarks, NO);
-    
-    //返回最近结果
-    return pinyin;
-}
-+ (NSString *)capitalFirstLetterWithString:(NSString *)string{
-    NSString *resultStr;
-    if (string && string.length > 0) {
-        resultStr = [string stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[string substringToIndex:1] capitalizedString]];
-    }
-    return resultStr;
-}
 //文件大小
 + (long long)fileSizeAtPath:(NSString *)path {
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -394,7 +367,7 @@ _Pragma("clang diagnostic pop") \
         }
     });
 }
-+ (void)fingerPrintWithReason:(NSString *)reason result:(void (^)(BOOL success, NSError *error))result{
++ (void)biologicalRecognitionResult:(void (^)(BOOL success, NSError *error))result{
     
     if (@available(iOS 8.0, *)) {
         LAContext *context = [[LAContext alloc] init];
@@ -422,7 +395,26 @@ _Pragma("clang diagnostic pop") \
         NSLog(@"你的设备不支持指纹识别");
     }
 }
-
+#pragma mark----- 结束应用
++ (void)exitApplication {
+    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    UIWindow *window = app.window;
+    
+    [UIView animateWithDuration:1.0f animations:^{
+        window.alpha = 0;
+    } completion:^(BOOL finished) {
+        exit(0);
+    }];
+}
++ (void)saveImageToAlbumWithImageName:(NSString *)imageName completionHandler:(void(^)(BOOL success, NSError * error))completionHandler{
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        [PHAssetChangeRequest creationRequestForAssetFromImage:[UIImage imageNamed:@"person"]];
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+        if (completionHandler) {
+            completionHandler(success,error);
+        }
+    }];
+}
 + (void)judgeSystemVersion{
     if (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_8_0){
         
