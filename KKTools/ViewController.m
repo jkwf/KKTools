@@ -13,8 +13,9 @@
 #import "UIView+X.h"
 #import "NSArray+Value.h"
 #import "NSString+X.h"
+#import <WebKit/WebKit.h>
 
-@interface ViewController ()<UITextFieldDelegate>{
+@interface ViewController ()<UITextFieldDelegate,WKNavigationDelegate>{
     __weak IBOutlet KKTextField *_textField;
 }
 

@@ -43,9 +43,10 @@ _Pragma("clang diagnostic pop") \
 }
 + (void)goToAppstore{
     static NSString *appId = @"7823982390";
-    NSURL *openUrl = [NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@",appId]];
-    [[UIApplication sharedApplication] openURL:openUrl options:@{} completionHandler:^(BOOL success) {
-    }];
+        
+    NSString *itunesurl = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/cn/app/id%@?mt=8&action=write-review",appId];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:itunesurl]];
 }
 + (UIWindow*)getWindow {
     UIWindow* win = nil; //[UIApplication sharedApplication].keyWindow;
@@ -429,6 +430,6 @@ _Pragma("clang diagnostic pop") \
     }else{
         // Fallback on earlier versions
     }
-    
 }
+
 @end

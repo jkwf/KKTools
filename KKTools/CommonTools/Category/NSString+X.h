@@ -13,14 +13,14 @@
 /**
  全角转半角
 
- @return <#return value description#>
+ @return 转化后的文本
  */
 - (NSString *)replaceSpecialWhitespace;
 
 /**
  半角转全角
 
- @return <#return value description#>
+ @return 转化后的文本
  */
 - (NSString *)replaceNormalWhiteSpace;
 
