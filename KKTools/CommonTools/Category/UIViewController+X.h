@@ -22,4 +22,11 @@
  设置返回按钮只有箭头
  */
 - (void)setEmptyBackBtn;
+
+/**
+ 设置系统返回按钮图片
+
+ @param imageName 图片名
+ */
+- (void)setNavBackBtnImage:(NSString *)imageName;
 @end

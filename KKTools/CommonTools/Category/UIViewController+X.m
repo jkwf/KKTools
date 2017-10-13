@@ -24,5 +24,9 @@
     UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.navigationItem setBackBarButtonItem:backButtonItem];
 }
-
+- (void)setNavBackBtnImage:(NSString *)imageName{
+    UIImage *backButtonImage = [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationController.navigationBar.backIndicatorImage = backButtonImage;
+    self.navigationController.navigationBar.backIndicatorTransitionMaskImage = backButtonImage;
+}
 @end
