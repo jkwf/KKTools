@@ -13,6 +13,8 @@
 		7D14EE951F9847450081796C /* JXButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D14EE931F9847440081796C /* JXButton.m */; };
 		7D14EE991F9848130081796C /* RoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D14EE981F9848130081796C /* RoundView.m */; };
 		7D14EE9C1F9898040081796C /* HttpHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D14EE9B1F9898040081796C /* HttpHelper.m */; };
+		7D14EEA21F98A8EF0081796C /* RoundLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D14EEA11F98A8EF0081796C /* RoundLabel.m */; };
+		7D14EEA51F98AB640081796C /* RoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D14EEA41F98AB640081796C /* RoundButton.m */; };
 		7D2992D01F04D52200CECAB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2992CF1F04D52200CECAB6 /* main.m */; };
 		7D2992D31F04D52200CECAB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2992D21F04D52200CECAB6 /* AppDelegate.m */; };
 		7D2992D61F04D52200CECAB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2992D51F04D52200CECAB6 /* ViewController.m */; };
@@ -52,6 +54,10 @@
 		7D14EE981F9848130081796C /* RoundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundView.m; sourceTree = "<group>"; };
 		7D14EE9A1F9898040081796C /* HttpHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpHelper.h; sourceTree = "<group>"; };
 		7D14EE9B1F9898040081796C /* HttpHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpHelper.m; sourceTree = "<group>"; };
+		7D14EEA01F98A8EF0081796C /* RoundLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundLabel.h; sourceTree = "<group>"; };
+		7D14EEA11F98A8EF0081796C /* RoundLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundLabel.m; sourceTree = "<group>"; };
+		7D14EEA31F98AB640081796C /* RoundButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundButton.h; sourceTree = "<group>"; };
+		7D14EEA41F98AB640081796C /* RoundButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundButton.m; sourceTree = "<group>"; };
 		7D2992CB1F04D52200CECAB6 /* KKTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D2992CF1F04D52200CECAB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7D2992D11F04D52200CECAB6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -135,6 +141,10 @@
 				7D3183B81F5D654C00CCE347 /* KKTextField.m */,
 				7D14EE971F9848130081796C /* RoundView.h */,
 				7D14EE981F9848130081796C /* RoundView.m */,
+				7D14EEA01F98A8EF0081796C /* RoundLabel.h */,
+				7D14EEA11F98A8EF0081796C /* RoundLabel.m */,
+				7D14EEA31F98AB640081796C /* RoundButton.h */,
+				7D14EEA41F98AB640081796C /* RoundButton.m */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -378,6 +388,7 @@
 				7D3183CE1F5D654C00CCE347 /* UIView+X.m in Sources */,
 				7D0AF0841F09E25F00B42F99 /* TBCityIconInfo.m in Sources */,
 				7D3183CC1F5D654C00CCE347 /* UILabel+X.m in Sources */,
+				7D14EEA21F98A8EF0081796C /* RoundLabel.m in Sources */,
 				7D3183B21F5D651B00CCE347 /* DeviceInfo.m in Sources */,
 				7D3183C91F5D654C00CCE347 /* NSArray+Value.m in Sources */,
 				7D3183CF1F5D654C00CCE347 /* UIViewController+X.m in Sources */,
@@ -391,6 +402,7 @@
 				7D3183CB1F5D654C00CCE347 /* UIImage+X.m in Sources */,
 				7D0AF0851F09E25F00B42F99 /* UIImage+TBCityIconFont.m in Sources */,
 				7D3183C71F5D654C00CCE347 /* KKLabel.m in Sources */,
+				7D14EEA51F98AB640081796C /* RoundButton.m in Sources */,
 				7D3183CD1F5D654C00CCE347 /* UITextField+X.m in Sources */,
 				7D3183D51F5D656200CCE347 /* KKAppHelper.m in Sources */,
 				7D14EE991F9848130081796C /* RoundView.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  RoundView.h
+//  RoundButton.h
 //  KKTools
 //
 //  Created by zving on 2017/10/19.
@@ -7,12 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-IB_DESIGNABLE
 
-@interface RoundView : UIView
+@interface RoundButton : UIButton
 @property (nonatomic, assign)IBInspectable CGFloat cornerRadius;
 @property (nonatomic, assign)IBInspectable CGFloat boderWidth;
 @property (nonatomic, strong)IBInspectable UIColor *boderColor;
 @end
-
-
