@@ -23,6 +23,10 @@ _Pragma("clang diagnostic pop") \
 #import <LocalAuthentication/LocalAuthentication.h>
 #import <StoreKit/StoreKit.h>
 
+static MBProgressHUD *hud;
+static NSString *prev_msg;
+static MBProgressHUD *nonBlockingHUD;
+
 @implementation KKAppHelper
 #pragma mark----- 系统设置
 + (void)prohibitAppSleep{
@@ -100,14 +104,11 @@ _Pragma("clang diagnostic pop") \
     
     long long folderSize = 0;
     
-    if ([fileManager fileExistsAtPath:path])
-    {
+    if ([fileManager fileExistsAtPath:path]) {
         NSArray *childerFiles = [fileManager subpathsAtPath:path];
-        for (NSString *fileName in childerFiles)
-        {
+        for (NSString *fileName in childerFiles) {
             NSString *fileAbsolutePath = [path stringByAppendingPathComponent:fileName];
-            if ([fileManager fileExistsAtPath:fileAbsolutePath])
-            {
+            if ([fileManager fileExistsAtPath:fileAbsolutePath]) {
                 long long size = [fileManager attributesOfItemAtPath:fileAbsolutePath error:nil].fileSize;
                 folderSize += size;
             }
@@ -130,29 +131,29 @@ _Pragma("clang diagnostic pop") \
     
     for (id item in array){
         SuppressPerformSelectorLeakWarning(
-            NSLog(@"%@",[item performSelector:NSSelectorFromString(@"applicationIdentifier")]);
-            NSLog(@"%@",[item performSelector:NSSelectorFromString(@"bundleVersion")]);
-            NSLog(@"%@",[item performSelector:NSSelectorFromString(@"shortVersionString")]);
+            DLog(@"%@",[item performSelector:NSSelectorFromString(@"applicationIdentifier")]);
+            DLog(@"%@",[item performSelector:NSSelectorFromString(@"bundleVersion")]);
+            DLog(@"%@",[item performSelector:NSSelectorFromString(@"shortVersionString")]);
         );
     }
 }
 #pragma mark----- 权限判断
 + (void)obtainJurisdictionStatus{
     if ([CLLocationManager authorizationStatus] ==kCLAuthorizationStatusDenied) {
-        NSLog(@"没有定位权限");
+        DLog(@"没有定位权限");
     }
     AVAuthorizationStatus statusVideo = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if (statusVideo == AVAuthorizationStatusDenied) {
-        NSLog(@"没有摄像头权限");
+        DLog(@"没有摄像头权限");
     }
     //是否有麦克风权限
     AVAuthorizationStatus statusAudio = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
     if (statusAudio == AVAuthorizationStatusDenied) {
-        NSLog(@"没有录音权限");
+        DLog(@"没有录音权限");
     }
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
         if (status == PHAuthorizationStatusDenied) {
-            NSLog(@"没有相册权限");
+            DLog(@"没有相册权限");
         }
     }];
 }
@@ -313,7 +314,7 @@ _Pragma("clang diagnostic pop") \
     // 或者只设置button
     [[UIButton appearance] setExclusiveTouch:YES];
 }
-
+#pragma mark---- 多个网络请求
 + (void)manyRequest{
     dispatch_group_t group = dispatch_group_create();
     dispatch_queue_t serialQueue = dispatch_queue_create("com.wzb.test.www", DISPATCH_QUEUE_SERIAL);
@@ -429,6 +430,57 @@ _Pragma("clang diagnostic pop") \
         
     }else{
         // Fallback on earlier versions
+    }
+}
+#pragma mark---- toast信息
+
+#pragma mark-------------  指示器
++ (void)showHudWithMsg:(NSString *)msg{
+    if(hud){
+        [KKAppHelper removeHUD:nil];
+    }
+    hud = [MBProgressHUD showHUDAddedTo:App_Window animated:YES];
+    hud.label.text = msg;
+    hud.contentColor = [UIColor whiteColor];
+    hud.bezelView.backgroundColor = [UIColor blackColor];
+    [hud showAnimated:YES];
+    prev_msg = msg;
+}
++ (void)removeHUD:(NSString *)msg{
+    if( hud ){
+        if (msg) {
+            hud.label.text = msg;
+            [hud hideAnimated:YES afterDelay:1.0f];
+        }else{
+            [hud hideAnimated:YES];
+        }
+        hud = nil;
+    }
+}
+
+#pragma mark-------------  toast消息
++ (void)toastMessage:(NSString*)msg{
+    [self toastMessage:msg window:App_Window];
+}
++ (void)toastMessage:(NSString*)msg window:(UIWindow*)window{
+    [KKAppHelper showNonBlockingHUD:[NSString stringWithFormat:@"%@",msg]
+                            addto:window
+                hideWithinSeconds:2];
+}
+
++ (void)showNonBlockingHUD:(NSString *)msg addto:(UIView*)superview hideWithinSeconds:(NSTimeInterval)delay{
+    [KKAppHelper removeNonBlockingHUD];
+    nonBlockingHUD = [MBProgressHUD showHUDAddedTo:superview animated:YES];
+    nonBlockingHUD.mode = MBProgressHUDModeText;
+    nonBlockingHUD.contentColor = [UIColor whiteColor];//文字和菊花的颜色
+    nonBlockingHUD.bezelView.backgroundColor = [UIColor blackColor];//菊花背景颜色
+    nonBlockingHUD.detailsLabel.text = msg;
+    [nonBlockingHUD hideAnimated:YES afterDelay:delay];
+}
++ (void)removeNonBlockingHUD{
+    if( nonBlockingHUD ) {
+        [nonBlockingHUD hideAnimated:YES];
+        nonBlockingHUD = nil;
     }
 }
 

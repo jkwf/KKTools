@@ -23,4 +23,26 @@
  @return <#return value description#>
  */
 - (CGFloat)caclueHeight;
+
+/**
+ 计算label的宽
+
+ @return <#return value description#>
+ */
+- (CGFloat)calculateLabWidth;
+
+/**
+ 计算label的高度
+
+ @return <#return value description#>
+ */
+- (CGFloat)calculateLabHeight;
+
+/**
+ 计算富文本的高度
+
+ @param space 行间距
+ @return <#return value description#>
+ */
+- (CGFloat)attributeHeightWithSpace:(CGFloat)space;
 @end

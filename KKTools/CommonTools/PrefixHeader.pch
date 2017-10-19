@@ -12,6 +12,10 @@
 
 #import "AppDelegate.h"
 #import "DeviceInfo.h"
+#import "KKAppHelper.h"
+#import "RoundView.h"
+#import <AFNetworking.h>
+#import <MBProgressHUD.h>
 
 #define kAppDelegate        ((AppDelegate *)[UIApplication sharedApplication].delegate)
 #define App_Window          [[[UIApplication sharedApplication] delegate] window]
@@ -25,11 +29,11 @@
 #define kScreenHeight    [UIScreen mainScreen].bounds.size.height    // 屏幕高
 
 #define myStoryboardId(sbId)  [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:sbId]
-
 #define SystemVersion (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_8_0)
-
 #define DevicePlatform [DeviceInfo getDeviceModel]
 
+#pragma mark------ 应用配置
+#define BaseServeUrl   @"http:www.baidu.com"
 
 #pragma mark--------- 打印输出
 #ifdef DEBUG

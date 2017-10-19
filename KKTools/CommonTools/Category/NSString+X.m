@@ -20,7 +20,12 @@
     CFStringTransform((CFMutableStringRef)convertedString, NULL, kCFStringTransformHiraganaKatakana, false);
     return [NSString stringWithString:convertedString];
 }
-
+- (BOOL)isNull{
+    if((NSNull *)self == [NSNull null] || self == nil || self == NULL || [self isEqualToString:@""] || [self isEqualToString:@"NULL"] || [self isEqualToString:@"<NULL>"] || [self isEqualToString:@"null"]  || [self isEqualToString:@"<null>"] || [self length] == 0){
+        return YES;
+    }
+    return NO;
+}
 - (BOOL)isEmail{
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"];
     return [predicate evaluateWithObject:self];
@@ -87,5 +92,6 @@
 - (NSString *)deleteFirstAndLastWhiteSpace{
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
+
 
 @end

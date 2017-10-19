@@ -58,8 +58,6 @@
     [self.layer addSublayer:border];
 }
 
-
-
 - (void)startAnimate {
     self.transform = CGAffineTransformRotate(CGAffineTransformIdentity, RADIANS(-5));
     [UIView animateWithDuration:0.25 delay:0.0 options:(UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse) animations:^ {
@@ -73,6 +71,7 @@
     } completion:nil];
 }
 
+#pragma mark---- 增加某个方向上的边框
 - (void)addBorder:(BorderDirectionType)direction color:(UIColor *)color width:(CGFloat)width {
     CALayer *border = [CALayer layer];
     border.backgroundColor = color.CGColor;
@@ -102,7 +101,7 @@
     }
     [self.layer addSublayer:border];
 }
-
+#pragma mark---- view晃动
 - (void)shakeWithShakeDirection:(ShakeDirection)shakeDirection {
     [self shakeWithTimes:10 speed:0.05 range:5 shakeDirection:shakeDirection];
 }

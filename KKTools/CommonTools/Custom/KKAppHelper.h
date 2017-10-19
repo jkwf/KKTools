@@ -244,4 +244,10 @@
  判断系统版本
  */
 + (void)judgeSystemVersion;
+
+#pragma mark---- toast信息
+
++ (void)showHudWithMsg:(NSString *)msg;
++ (void)removeHUD:(NSString *)msg;
++ (void)toastMessage:(NSString*)msg;
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "UITextField+X.h"
+#import "NSString+X.h"
 
 @implementation UITextField (X)
 - (void)hiddenCursor{
@@ -25,4 +26,5 @@
     //水平
     self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
 }
+
 @end

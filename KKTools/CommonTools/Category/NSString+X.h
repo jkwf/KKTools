@@ -25,6 +25,13 @@
 - (NSString *)replaceNormalWhiteSpace;
 
 /**
+ 判断是否为空
+
+ @return <#return value description#>
+ */
+- (BOOL)isNull;
+
+/**
  判断邮箱
 
  @return <#return value description#>
