@@ -46,14 +46,13 @@
     // 当前应用版本号码   int类型
     NSString *appCurVersionNum = [infoDictionary objectForKey:@"CFBundleVersion"];
     
-    NSLog(@"手机别名: %@ \n 设备名称: %@ \n 手机系统版本: %@ \n 手机型号: %@ \n 国际化区域名称: %@ \n 当前应用名称：%@ \n 当前应用软件版本:%@ \n 当前应用版本号码：%@",userPhoneName,deviceName,phoneVersion,phoneModel,localPhoneModel,appCurName,appCurVersion,appCurVersionNum);
+    DLog(@"手机别名: %@ \n 设备名称: %@ \n 手机系统版本: %@ \n 手机型号: %@ \n 国际化区域名称: %@ \n 当前应用名称：%@ \n 当前应用软件版本:%@ \n 当前应用版本号码：%@",userPhoneName,deviceName,phoneVersion,phoneModel,localPhoneModel,appCurName,appCurVersion,appCurVersionNum);
     
     NSString * res = [NSString stringWithFormat:@"%f*%f",[UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height];
     
     NSString *ipAdress = [DeviceIp deviceIPAdress];
     NSMutableDictionary * params = [NSMutableDictionary dictionary];
     [params setValue:@"ios" forKey:@"TerminalType"];
-    //[params setValue:identifierNumber forKey:@"IMEI"];
     [params setValue:phoneModel forKey:@"TerminalModel"];
     [params setValue:phoneVersion forKey:@"SysVersion"];
     [params setValue:appCurVersion forKey:@"AppVersion"];

@@ -23,6 +23,8 @@ _Pragma("clang diagnostic pop") \
 #import <LocalAuthentication/LocalAuthentication.h>
 #import <StoreKit/StoreKit.h>
 
+#define HudHiddenTime   2
+
 static MBProgressHUD *hud;
 static NSString *prev_msg;
 static MBProgressHUD *nonBlockingHUD;
@@ -254,12 +256,9 @@ static MBProgressHUD *nonBlockingHUD;
 + (NSMutableAttributedString *)drawDeleteLabWithString:(NSString *)str location:(NSInteger)location length:(NSInteger)length color:(UIColor *)color{
     NSMutableAttributedString *attritu = [[NSMutableAttributedString alloc] initWithString:str];
     
-    [attritu addAttributes:@{
-                             NSStrikethroughStyleAttributeName:@(NSUnderlineStyleSingle),
-                             NSStrikethroughColorAttributeName:
-                                 color,
-                             NSBaselineOffsetAttributeName:
-                                 @(0),
+    [attritu addAttributes:@{NSStrikethroughStyleAttributeName:@(NSUnderlineStyleSingle),
+                             NSStrikethroughColorAttributeName:color,
+                             NSBaselineOffsetAttributeName:@(0),
                              } range:NSMakeRange(location, length)];
     
     return attritu;
@@ -462,16 +461,25 @@ static MBProgressHUD *nonBlockingHUD;
 + (void)toastMessage:(NSString*)msg{
     [self toastMessage:msg window:App_Window];
 }
++ (void)toastMessage:(NSString*)msg completion:(void (^)(void))completion{
+    [self toastMessage:msg window:App_Window];
+    if (completion) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(HudHiddenTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            completion();
+        });
+    }
+}
 + (void)toastMessage:(NSString*)msg window:(UIWindow*)window{
     [KKAppHelper showNonBlockingHUD:[NSString stringWithFormat:@"%@",msg]
                             addto:window
-                hideWithinSeconds:2];
+                hideWithinSeconds:HudHiddenTime];
 }
 
 + (void)showNonBlockingHUD:(NSString *)msg addto:(UIView*)superview hideWithinSeconds:(NSTimeInterval)delay{
     [KKAppHelper removeNonBlockingHUD];
     nonBlockingHUD = [MBProgressHUD showHUDAddedTo:superview animated:YES];
     nonBlockingHUD.mode = MBProgressHUDModeText;
+//    nonBlockingHUD.detailsLabel.textColor = [UIColor blueColor];//文本颜色
     nonBlockingHUD.contentColor = [UIColor whiteColor];//文字和菊花的颜色
     nonBlockingHUD.bezelView.backgroundColor = [UIColor blackColor];//菊花背景颜色
     nonBlockingHUD.detailsLabel.text = msg;

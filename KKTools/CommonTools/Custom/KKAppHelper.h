@@ -250,4 +250,5 @@
 + (void)showHudWithMsg:(NSString *)msg;
 + (void)removeHUD:(NSString *)msg;
 + (void)toastMessage:(NSString*)msg;
++ (void)toastMessage:(NSString*)msg completion:(void (^)(void))completion;
 @end
