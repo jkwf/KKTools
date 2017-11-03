@@ -370,7 +370,7 @@ static MBProgressHUD *nonBlockingHUD;
 }
 + (void)biologicalRecognitionResult:(void (^)(BOOL success, NSError *error))result{
     
-    if (@available(iOS 8.0, *)) {
+    if (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_8_0) {
         LAContext *context = [[LAContext alloc] init];
         NSString *localizedReason = @"指纹登录";
         if (@available(iOS 11.0, *)) {
@@ -397,16 +397,17 @@ static MBProgressHUD *nonBlockingHUD;
     }
 }
 #pragma mark----- 结束应用
-+ (void)exitApplication {
-    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    UIWindow *window = app.window;
-    
-    [UIView animateWithDuration:1.0f animations:^{
-        window.alpha = 0;
-    } completion:^(BOOL finished) {
-        exit(0);
-    }];
-}
+//+ (void)exitApplication {
+//    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//    UIWindow *window = app.window;
+//    
+//    [UIView animateWithDuration:1.0f animations:^{
+//        window.alpha = 0;
+//    } completion:^(BOOL finished) {
+//        exit(0);
+//    }];
+//}
+
 + (void)saveImageToAlbumWithImageName:(NSString *)imageName completionHandler:(void(^)(BOOL success, NSError * error))completionHandler{
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
         [PHAssetChangeRequest creationRequestForAssetFromImage:[UIImage imageNamed:@"person"]];
@@ -491,5 +492,6 @@ static MBProgressHUD *nonBlockingHUD;
         nonBlockingHUD = nil;
     }
 }
+
 
 @end

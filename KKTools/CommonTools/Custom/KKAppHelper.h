@@ -231,7 +231,7 @@
 /**
  结束应用
  */
-+ (void)exitApplication;
+//+ (void)exitApplication;
 
 /**
  保存图片到相册

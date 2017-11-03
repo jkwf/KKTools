@@ -114,4 +114,11 @@
  @return <#return value description#>
  */
 - (NSString *)deleteFirstAndLastWhiteSpace;
+
+/**
+ json串转字典
+
+ @return <#return value description#>
+ */
+- (NSDictionary *)jsonStringToDictionary;
 @end
