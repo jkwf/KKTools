@@ -18,7 +18,6 @@
 		7D2992D01F04D52200CECAB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2992CF1F04D52200CECAB6 /* main.m */; };
 		7D2992D31F04D52200CECAB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2992D21F04D52200CECAB6 /* AppDelegate.m */; };
 		7D2992D61F04D52200CECAB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2992D51F04D52200CECAB6 /* ViewController.m */; };
-		7D2992D91F04D52200CECAB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2992D71F04D52200CECAB6 /* Main.storyboard */; };
 		7D2992DB1F04D52200CECAB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D2992DA1F04D52200CECAB6 /* Assets.xcassets */; };
 		7D2992DE1F04D52200CECAB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2992DC1F04D52200CECAB6 /* LaunchScreen.storyboard */; };
 		7D3183B21F5D651B00CCE347 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183AF1F5D651B00CCE347 /* DeviceInfo.m */; };
@@ -36,6 +35,8 @@
 		7D3183D51F5D656200CCE347 /* KKAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183D31F5D656200CCE347 /* KKAppHelper.m */; };
 		7D72B9621F5FF68D00F42949 /* NSString+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D72B9611F5FF68D00F42949 /* NSString+X.m */; };
 		7DA28B821FAC4419008EE31F /* NSDictionary+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA28B811FAC4419008EE31F /* NSDictionary+X.m */; };
+		7DF087771FE3E030004FFD0F /* ProgressButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF087761FE3E030004FFD0F /* ProgressButton.m */; };
+		7DF087791FE3E189004FFD0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DF087781FE3E188004FFD0F /* Main.storyboard */; };
 		BD453F812D738F84F522A8DA /* libPods-KKTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A30854404CC6BA44678CC6F /* libPods-KKTools.a */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +66,6 @@
 		7D2992D21F04D52200CECAB6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7D2992D41F04D52200CECAB6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7D2992D51F04D52200CECAB6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		7D2992D81F04D52200CECAB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D2992DA1F04D52200CECAB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D2992DD1F04D52200CECAB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D2992DF1F04D52200CECAB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,6 +102,11 @@
 		7D72B9611F5FF68D00F42949 /* NSString+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+X.m"; sourceTree = "<group>"; };
 		7DA28B801FAC4419008EE31F /* NSDictionary+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+X.h"; sourceTree = "<group>"; };
 		7DA28B811FAC4419008EE31F /* NSDictionary+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+X.m"; sourceTree = "<group>"; };
+		7DF085F61FE286BA004FFD0F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7DF085F81FE286C6004FFD0F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7DF087751FE3E030004FFD0F /* ProgressButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressButton.h; sourceTree = "<group>"; };
+		7DF087761FE3E030004FFD0F /* ProgressButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressButton.m; sourceTree = "<group>"; };
+		7DF087781FE3E188004FFD0F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +153,8 @@
 				7D14EEA11F98A8EF0081796C /* RoundLabel.m */,
 				7D14EEA31F98AB640081796C /* RoundButton.h */,
 				7D14EEA41F98AB640081796C /* RoundButton.m */,
+				7DF087751FE3E030004FFD0F /* ProgressButton.h */,
+				7DF087761FE3E030004FFD0F /* ProgressButton.m */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -179,7 +186,7 @@
 				7D2992D21F04D52200CECAB6 /* AppDelegate.m */,
 				7D2992D41F04D52200CECAB6 /* ViewController.h */,
 				7D2992D51F04D52200CECAB6 /* ViewController.m */,
-				7D2992D71F04D52200CECAB6 /* Main.storyboard */,
+				7DF087781FE3E188004FFD0F /* Main.storyboard */,
 				7D2992DA1F04D52200CECAB6 /* Assets.xcassets */,
 				7D2992DC1F04D52200CECAB6 /* LaunchScreen.storyboard */,
 				7D2992DF1F04D52200CECAB6 /* Info.plist */,
@@ -199,6 +206,8 @@
 		7D3183A01F5D62F500CCE347 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DF085F81FE286C6004FFD0F /* UIKit.framework */,
+				7DF085F61FE286BA004FFD0F /* Security.framework */,
 				7D3183A31F5D630A00CCE347 /* SystemConfiguration.framework */,
 				7D3183A11F5D62F500CCE347 /* CoreTelephony.framework */,
 				4A30854404CC6BA44678CC6F /* libPods-KKTools.a */,
@@ -326,9 +335,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DF087791FE3E189004FFD0F /* Main.storyboard in Resources */,
 				7D2992DE1F04D52200CECAB6 /* LaunchScreen.storyboard in Resources */,
 				7D2992DB1F04D52200CECAB6 /* Assets.xcassets in Resources */,
-				7D2992D91F04D52200CECAB6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +401,7 @@
 				7D2992D31F04D52200CECAB6 /* AppDelegate.m in Sources */,
 				7D2992D01F04D52200CECAB6 /* main.m in Sources */,
 				7D3183CE1F5D654C00CCE347 /* UIView+X.m in Sources */,
+				7DF087771FE3E030004FFD0F /* ProgressButton.m in Sources */,
 				7D0AF0841F09E25F00B42F99 /* TBCityIconInfo.m in Sources */,
 				7D3183CC1F5D654C00CCE347 /* UILabel+X.m in Sources */,
 				7D14EEA21F98A8EF0081796C /* RoundLabel.m in Sources */,
@@ -419,14 +429,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7D2992D71F04D52200CECAB6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7D2992D81F04D52200CECAB6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7D2992DC1F04D52200CECAB6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

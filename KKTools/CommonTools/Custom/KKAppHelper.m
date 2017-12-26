@@ -120,25 +120,6 @@ static MBProgressHUD *nonBlockingHUD;
     return folderSize;
 }
 
-+ (void)deviceHasFixApplications{
-    Class c =NSClassFromString(@"LSApplicationWorkspace");
-    id s;
-    SuppressPerformSelectorLeakWarning(
-        s = [(id)c performSelector:NSSelectorFromString(@"defaultWorkspace")];
-    );
-    NSArray *array;
-    SuppressPerformSelectorLeakWarning(
-        array = [s performSelector:NSSelectorFromString(@"allInstalledApplications")];
-    );
-    
-    for (id item in array){
-        SuppressPerformSelectorLeakWarning(
-            DLog(@"%@",[item performSelector:NSSelectorFromString(@"applicationIdentifier")]);
-            DLog(@"%@",[item performSelector:NSSelectorFromString(@"bundleVersion")]);
-            DLog(@"%@",[item performSelector:NSSelectorFromString(@"shortVersionString")]);
-        );
-    }
-}
 #pragma mark----- 权限判断
 + (void)obtainJurisdictionStatus{
     if ([CLLocationManager authorizationStatus] ==kCLAuthorizationStatusDenied) {
@@ -170,9 +151,9 @@ static MBProgressHUD *nonBlockingHUD;
 }
 
 + (BOOL)checkNetworkStatus{
-//    AFNetworkReachabilityManager *reachabilityManager = [AFNetworkReachabilityManager sharedManager];
-//    [reachabilityManager startMonitoring];
-//    return [reachabilityManager isReachable];
+    AFNetworkReachabilityManager *reachabilityManager = [AFNetworkReachabilityManager sharedManager];
+    [reachabilityManager startMonitoring];
+    return [reachabilityManager isReachable];
     return YES;
 }
 #pragma mark-------------- 绘制虚线
@@ -288,7 +269,6 @@ static MBProgressHUD *nonBlockingHUD;
 + (void)setNavigationStyle{
     [[UINavigationBar appearance] setBarTintColor:[UIColor blueColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:21],NSForegroundColorAttributeName:[UIColor whiteColor]}];
-//    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
     [UINavigationBar appearance].barStyle = UIBarStyleBlack;
 }
@@ -396,18 +376,39 @@ static MBProgressHUD *nonBlockingHUD;
         NSLog(@"你的设备不支持指纹识别");
     }
 }
+/*
 #pragma mark----- 结束应用
-//+ (void)exitApplication {
-//    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//    UIWindow *window = app.window;
-//    
-//    [UIView animateWithDuration:1.0f animations:^{
-//        window.alpha = 0;
-//    } completion:^(BOOL finished) {
-//        exit(0);
-//    }];
-//}
-
++ (void)exitApplication {
+    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    UIWindow *window = app.window;
+    
+    [UIView animateWithDuration:1.0f animations:^{
+        window.alpha = 0;
+    } completion:^(BOOL finished) {
+        exit(0);
+    }];
+}
+#pragma mark------ 获取设备上安装的应用
++ (void)deviceHasFixApplications{
+    Class c =NSClassFromString(@"LSApplicationWorkspace");
+    id s;
+    SuppressPerformSelectorLeakWarning(
+                                       s = [(id)c performSelector:NSSelectorFromString(@"defaultWorkspace")];
+                                       );
+    NSArray *array;
+    SuppressPerformSelectorLeakWarning(
+                                       array = [s performSelector:NSSelectorFromString(@"allInstalledApplications")];
+                                       );
+    
+    for (id item in array){
+        SuppressPerformSelectorLeakWarning(
+                                           DLog(@"%@",[item performSelector:NSSelectorFromString(@"applicationIdentifier")]);
+                                           DLog(@"%@",[item performSelector:NSSelectorFromString(@"bundleVersion")]);
+                                           DLog(@"%@",[item performSelector:NSSelectorFromString(@"shortVersionString")]);
+                                           );
+    }
+}
+ */
 + (void)saveImageToAlbumWithImageName:(NSString *)imageName completionHandler:(void(^)(BOOL success, NSError * error))completionHandler{
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
         [PHAssetChangeRequest creationRequestForAssetFromImage:[UIImage imageNamed:@"person"]];
@@ -422,7 +423,7 @@ static MBProgressHUD *nonBlockingHUD;
         
     }
     
-    if (__IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_8_0) {
+    if (__IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_10_0) {
         NSLog(@"=====================");
     }
     

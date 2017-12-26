@@ -15,8 +15,10 @@
 #import "NSString+X.h"
 #import <WebKit/WebKit.h>
 #import "HttpHelper.h"
+#import "ProgressButton.h"
 
 @interface ViewController ()<UITextFieldDelegate,WKNavigationDelegate>{
+    NSTimer *_timer;
 }
 
 @end
@@ -64,7 +66,29 @@
     }];
     
 }
+- (IBAction)btnClick:(ProgressButton *)sender {
+    if (_timer) {
+        [_timer invalidate];
+        _timer = nil;
+    }
+    _timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(loadData:) userInfo:sender repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:_timer forMode: NSRunLoopCommonModes];
+}
+- (void)loadData:(id)sender {
+    ProgressButton *progressView = (ProgressButton *)[sender userInfo];
+    NSInteger idx = progressView.tag;
 
+    progressView.fillColor = [UIColor yellowColor];
+    
+    if (progressView.progress < 1) {
+        progressView.progress = progressView.progress + 0.015;
+    } else {
+        [_timer invalidate];
+        _timer = nil;
+//        progressView.textLabel.text = [NSString stringWithFormat:@"style%ld", idx + 1];
+       
+    }
+}
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     NSLog(@"------------%@",string);
     if ([string isEnglishOrNumber]) {

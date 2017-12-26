@@ -57,10 +57,6 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager.requestSerializer setValue:@"PHPSESSID=ls7d4fc4tams5ioen2123g5bc2" forHTTPHeaderField:@"Cookie"];
-    [manager.requestSerializer setValue:@"a12d8bcf76419bc9f2189fa75447c34b" forHTTPHeaderField:@"Md5"];
-    [manager.requestSerializer setValue:@"1163D927-6F04-46B5-8D4F-5E2046AB1DB1" forHTTPHeaderField:@"Udid"];
-    
     if (alert) {
         [KKAppHelper showHudWithMsg:@"正在加载……"];
     }
