@@ -307,8 +307,8 @@
 				TargetAttributes = {
 					7D2992CA1F04D52200CECAB6 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = SG4489CH78;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = RYB49557F8;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -549,13 +549,17 @@
 			baseConfigurationReference = 0DFFA816EE14F22143FF33AC /* Pods-KKTools.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SG4489CH78;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = RYB49557F8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/zving/Desktop/KKTools/KKTools/CommonTools/PrefixHeader.pch;
 				INFOPLIST_FILE = KKTools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zving.KKTools;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chinabuilding.ebook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d9605b20-f529-45ad-941a-6552b0fd493f";
+				PROVISIONING_PROFILE_SPECIFIER = ebookDevelopment;
 			};
 			name = Debug;
 		};
@@ -564,13 +568,17 @@
 			baseConfigurationReference = 235A28D851AD31204B29F33B /* Pods-KKTools.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SG4489CH78;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = RYB49557F8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/zving/Desktop/KKTools/KKTools/CommonTools/PrefixHeader.pch;
 				INFOPLIST_FILE = KKTools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zving.KKTools;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chinabuilding.ebook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d9605b20-f529-45ad-941a-6552b0fd493f";
+				PROVISIONING_PROFILE_SPECIFIER = ebookDevelopment;
 			};
 			name = Release;
 		};
