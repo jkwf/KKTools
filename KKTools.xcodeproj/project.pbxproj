@@ -553,7 +553,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = RYB49557F8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/zving/Desktop/KKTools/KKTools/CommonTools/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/KKTools/CommonTools/PrefixHeader.pch";
 				INFOPLIST_FILE = KKTools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chinabuilding.ebook;
@@ -572,7 +572,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = RYB49557F8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/zving/Desktop/KKTools/KKTools/CommonTools/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/KKTools/CommonTools/PrefixHeader.pch";
 				INFOPLIST_FILE = KKTools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chinabuilding.ebook;
