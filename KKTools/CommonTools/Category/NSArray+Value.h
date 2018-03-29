@@ -53,6 +53,13 @@
 - (NSArray *)getRidOf;
 
 /**
+ 升序去重，也可用于排序
+
+ @return <#return value description#>
+ */
+- (NSArray *)getAscendRidOf;
+
+/**
  排序
  */
 - (void)sequence;

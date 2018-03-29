@@ -33,7 +33,10 @@
     NSArray *array = @[@"1",@"4",@"9",@"10",@"29",@"18",@"16",@"15",@"10",@"11",@"12",@"19"];
     NSSet *set = [NSSet setWithArray:array];
     NSLog(@"set=====%@",set.allObjects);
-    NSArray *arrar = [NSArray arrayWithArray:set.allObjects];
+    //升序
+    NSOrderedSet *set1 = [NSOrderedSet orderedSetWithArray:array];
+    NSLog(@"set1====%@",set1.array);
+    
     
 //    NSLog(@"uppercaseString==%@", [array valueForKeyPath:@"uppercaseString"]);
 //    NSLog(@"length==%@", [array valueForKeyPath:@"length"]);

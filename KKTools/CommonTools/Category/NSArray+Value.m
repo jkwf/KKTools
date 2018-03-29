@@ -29,6 +29,10 @@
     NSSet *set = [NSSet setWithArray:self];
     return set.allObjects;
 }
+- (NSArray *)getAscendRidOf{
+    NSOrderedSet *set = [NSOrderedSet orderedSetWithArray:self];
+    return set.array;
+}
 - (void)sequence{
     [self sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         if ([obj1 intValue] > [obj2 intValue]) {
