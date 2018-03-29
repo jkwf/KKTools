@@ -44,4 +44,16 @@
  @return <#return value description#>
  */
 - (NSArray *)deleteRecurElement;
+
+/**
+ 去重的方法二
+
+ @return <#return value description#>
+ */
+- (NSArray *)getRidOf;
+
+/**
+ 排序
+ */
+- (void)sequence;
 @end

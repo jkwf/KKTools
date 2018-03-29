@@ -25,6 +25,10 @@
 - (NSArray *)deleteRecurElement{
     return [self valueForKeyPath:@"@distinctUnionOfObjects.self"];
 }
+- (NSArray *)getRidOf{
+    NSSet *set = [NSSet setWithArray:self];
+    return set.allObjects;
+}
 - (void)sequence{
     [self sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         if ([obj1 intValue] > [obj2 intValue]) {
