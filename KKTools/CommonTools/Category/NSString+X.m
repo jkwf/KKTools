@@ -92,7 +92,14 @@
 - (NSString *)deleteFirstAndLastWhiteSpace{
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
-
+- (NSString *)deleteMoreTypeWhiteSpace{
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\s" options:NSRegularExpressionCaseInsensitive error:nil];
+    
+    return [regex stringByReplacingMatchesInString:self
+                                                options:0
+                                                  range:NSMakeRange(0, self.length)
+                                           withTemplate:@""];
+}
 #pragma mark---- json串转字典
 - (NSDictionary *)jsonStringToDictionary{
     if (self == nil) {

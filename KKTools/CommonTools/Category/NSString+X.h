@@ -102,11 +102,18 @@
 - (NSString *)capitalFirstLetter;
 
 /**
- 删除所有空格
+ 删除半角空格
 
  @return <#return value description#>
  */
 - (NSString *)deleteAllWhiteSpace;
+
+/**
+ 删除半角和全角空格
+
+ @return <#return value description#>
+ */
+- (NSString *)deleteMoreTypeWhiteSpace;
 
 /**
  删除首尾空格

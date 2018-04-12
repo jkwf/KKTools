@@ -33,6 +33,7 @@
 		7D3183CF1F5D654C00CCE347 /* UIViewController+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183C61F5D654C00CCE347 /* UIViewController+X.m */; };
 		7D3183D41F5D656200CCE347 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183D11F5D656200CCE347 /* BaseTabBarController.m */; };
 		7D3183D51F5D656200CCE347 /* KKAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3183D31F5D656200CCE347 /* KKAppHelper.m */; };
+		7D683AAA207F102900E1E96D /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D683AA9207F102800E1E96D /* test.png */; };
 		7D72B9621F5FF68D00F42949 /* NSString+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D72B9611F5FF68D00F42949 /* NSString+X.m */; };
 		7DA28B821FAC4419008EE31F /* NSDictionary+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA28B811FAC4419008EE31F /* NSDictionary+X.m */; };
 		7DF087771FE3E030004FFD0F /* ProgressButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF087761FE3E030004FFD0F /* ProgressButton.m */; };
@@ -98,6 +99,7 @@
 		7D3183D21F5D656200CCE347 /* KKAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAppHelper.h; sourceTree = "<group>"; };
 		7D3183D31F5D656200CCE347 /* KKAppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAppHelper.m; sourceTree = "<group>"; };
 		7D3183D61F5D65FD00CCE347 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		7D683AA9207F102800E1E96D /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		7D72B9601F5FF68D00F42949 /* NSString+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+X.h"; sourceTree = "<group>"; };
 		7D72B9611F5FF68D00F42949 /* NSString+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+X.m"; sourceTree = "<group>"; };
 		7DA28B801FAC4419008EE31F /* NSDictionary+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+X.h"; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				7D2992D21F04D52200CECAB6 /* AppDelegate.m */,
 				7D2992D41F04D52200CECAB6 /* ViewController.h */,
 				7D2992D51F04D52200CECAB6 /* ViewController.m */,
+				7D683AA9207F102800E1E96D /* test.png */,
 				7DF087781FE3E188004FFD0F /* Main.storyboard */,
 				7D2992DA1F04D52200CECAB6 /* Assets.xcassets */,
 				7D2992DC1F04D52200CECAB6 /* LaunchScreen.storyboard */,
@@ -338,6 +341,7 @@
 				7DF087791FE3E189004FFD0F /* Main.storyboard in Resources */,
 				7D2992DE1F04D52200CECAB6 /* LaunchScreen.storyboard in Resources */,
 				7D2992DB1F04D52200CECAB6 /* Assets.xcassets in Resources */,
+				7D683AAA207F102900E1E96D /* test.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

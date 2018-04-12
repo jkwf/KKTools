@@ -16,9 +16,11 @@
 #import <WebKit/WebKit.h>
 #import "HttpHelper.h"
 #import "ProgressButton.h"
+#import "KKProgressView.h"
 
 @interface ViewController ()<UITextFieldDelegate,WKNavigationDelegate>{
     NSTimer *_timer;
+    IBOutlet UIProgressView *_prog;
 }
 
 @end
@@ -37,6 +39,11 @@
     NSOrderedSet *set1 = [NSOrderedSet orderedSetWithArray:array];
     NSLog(@"set1====%@",set1.array);
     
+    
+    UIEdgeInsets insets = UIEdgeInsetsMake(0, 0, 0, 0);
+    UIImage *image = [UIImage imageNamed:@"test"];
+    UIImage *proImg = [image resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeTile];
+    _prog.progressImage = proImg;
     
 //    NSLog(@"uppercaseString==%@", [array valueForKeyPath:@"uppercaseString"]);
 //    NSLog(@"length==%@", [array valueForKeyPath:@"length"]);
@@ -59,23 +66,26 @@
         [_timer invalidate];
         _timer = nil;
     }
-    _timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(loadData:) userInfo:sender repeats:YES];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(loadData:) userInfo:sender repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode: NSRunLoopCommonModes];
 }
 - (void)loadData:(id)sender {
-    ProgressButton *progressView = (ProgressButton *)[sender userInfo];
-    NSInteger idx = progressView.tag;
-
-    progressView.fillColor = [UIColor yellowColor];
     
-    if (progressView.progress < 1) {
-        progressView.progress = progressView.progress + 0.015;
-    } else {
-        [_timer invalidate];
-        _timer = nil;
-//        progressView.textLabel.text = [NSString stringWithFormat:@"style%ld", idx + 1];
-       
-    }
+    _prog.progress = _prog.progress + 0.05;
+    NSLog(@"=============%f",_prog.progress);
+//    ProgressButton *progressView = (ProgressButton *)[sender userInfo];
+//    NSInteger idx = progressView.tag;
+//
+//    progressView.fillColor = [UIColor yellowColor];
+//    
+//    if (progressView.progress < 1) {
+//        progressView.progress = progressView.progress + 0.015;
+//    } else {
+//        [_timer invalidate];
+//        _timer = nil;
+////        progressView.textLabel.text = [NSString stringWithFormat:@"style%ld", idx + 1];
+//       
+//    }
 }
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     NSLog(@"------------%@",string);
