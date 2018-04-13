@@ -16,7 +16,6 @@
 #import <WebKit/WebKit.h>
 #import "HttpHelper.h"
 #import "ProgressButton.h"
-#import "KKProgressView.h"
 
 @interface ViewController ()<UITextFieldDelegate,WKNavigationDelegate>{
     NSTimer *_timer;

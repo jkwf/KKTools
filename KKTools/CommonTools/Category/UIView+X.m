@@ -137,4 +137,44 @@
                           direction:direction * -1];
         }];
 }
+
+- (void)setPositionCornerWithRadius:(CGFloat)radius rectCorner:(ZVRectCorner)rectCorner{
+    UIRectCorner rect;
+    switch (rectCorner) {
+        case ZVRectCornerTop:
+            rect = UIRectCornerTopLeft|UIRectCornerTopRight;
+            break;
+        case ZVRectCornerBottom:
+            rect = UIRectCornerBottomLeft|UIRectCornerBottomRight;
+            break;
+        case ZVRectCornerLeft:
+            rect = UIRectCornerTopLeft|UIRectCornerBottomLeft;
+            break;
+        case ZVRectCornerRight:
+            rect = UIRectCornerTopRight|UIRectCornerBottomRight;
+            break;
+        case ZVRectCornerTopLeft:
+            rect = UIRectCornerTopLeft;
+            break;
+        case ZVRectCornerTopRight:
+            rect = UIRectCornerTopRight;
+            break;
+        case ZVRectCornerBottomLeft:
+            rect = UIRectCornerBottomLeft;
+            break;
+        case ZVRectCornerBottomRight:
+            rect = UIRectCornerBottomRight;
+            break;
+        default:
+            rect = UIRectCornerAllCorners;
+            break;
+    }
+    
+    UIBezierPath *fieldPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rect cornerRadii:CGSizeMake(radius , radius)];
+    CAShapeLayer *fieldLayer = [[CAShapeLayer alloc] init];
+    fieldLayer.frame = self.bounds;
+    fieldLayer.path = fieldPath.CGPath;
+    self.layer.mask = fieldLayer;
+}
+
 @end

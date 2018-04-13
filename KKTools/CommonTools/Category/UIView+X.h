@@ -18,6 +18,18 @@ typedef NS_ENUM(NSInteger, ShakeDirection) {
     DirectionVertical
 };
 
+typedef NS_ENUM(NSInteger, ZVRectCorner) {
+    ZVRectCornerAllCorners  = 0,  //所有
+    ZVRectCornerTopLeft     = 1,//左上
+    ZVRectCornerTopRight    = 2,//右上
+    ZVRectCornerBottomLeft  = 3,//左下
+    ZVRectCornerBottomRight = 4,//右下
+    ZVRectCornerLeft        = 5,//左
+    ZVRectCornerRight       = 6,//右
+    ZVRectCornerTop         = 7,//上
+    ZVRectCornerBottom      = 8 //下
+};
+
 @interface UIView (X)
 @property (nonatomic, assign) CGFloat left;
 @property (nonatomic, assign) CGFloat top;
@@ -55,4 +67,11 @@ typedef NS_ENUM(NSInteger, ShakeDirection) {
 - (void)shakeWithTimes:(NSInteger)times speed:(CGFloat)speed shakeDirection:(ShakeDirection)shakeDirection;
 - (void)shakeWithTimes:(NSInteger)times speed:(CGFloat)speed range:(CGFloat)range shakeDirection:(ShakeDirection)shakeDirection;
 
+/**
+ 添加某个方向的圆角
+
+ @param radius 圆角半径
+ @param rectCorner 圆角方向
+ */
+- (void)setPositionCornerWithRadius:(CGFloat)radius rectCorner:(ZVRectCorner)rectCorner;
 @end
