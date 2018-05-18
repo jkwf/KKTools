@@ -176,5 +176,48 @@
     fieldLayer.path = fieldPath.CGPath;
     self.layer.mask = fieldLayer;
 }
-
+- (void)setBorderWithDirection:(ZVDirection)direction borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor{
+    
+    if (direction == ZVDirectionAll) {
+        self.layer.borderWidth = borderWidth;
+        self.layer.borderColor = borderColor.CGColor;
+    }else{
+        UIBezierPath * bezierPath = [UIBezierPath bezierPath];
+        if (direction == ZVDirectionTop) {
+            [bezierPath moveToPoint:CGPointMake(0.0f, 0.0f)];
+            [bezierPath addLineToPoint:CGPointMake(self.frame.size.width, 0.0f)];
+        }else if (direction == ZVDirectionLeft){
+            [bezierPath moveToPoint:CGPointMake(0.0f, self.frame.size.height)];
+            [bezierPath addLineToPoint:CGPointMake(0.0f, 0.0f)];
+        }else if (direction == ZVDirectionBottom){
+            [bezierPath moveToPoint:CGPointMake(0.0f, self.frame.size.height)];
+            [bezierPath addLineToPoint:CGPointMake( self.frame.size.width, self.frame.size.height)];
+        }else if (direction == ZVDirectionRight){
+            [bezierPath moveToPoint:CGPointMake(self.frame.size.width, 0.0f)];
+            [bezierPath addLineToPoint:CGPointMake( self.frame.size.width, self.frame.size.height)];
+        }else if (direction == ZVDirectionTopLeft){
+            [bezierPath moveToPoint:CGPointMake(0.0f, self.frame.size.height)];
+            [bezierPath addLineToPoint:CGPointMake(0.0f, 0.0f)];
+            [bezierPath addLineToPoint:CGPointMake(self.frame.size.width, 0.0f)];
+        }else if (direction == ZVDirectionTopRight){
+            [bezierPath moveToPoint:CGPointMake(0.0f, 0.0f)];
+            [bezierPath addLineToPoint:CGPointMake(self.frame.size.width, 0.0f)];
+            [bezierPath addLineToPoint:CGPointMake( self.frame.size.width, self.frame.size.height)];
+        }else if (direction == ZVDirectionBottomLeft){
+            [bezierPath moveToPoint:CGPointMake(0.0f, 0.0f)];
+            [bezierPath addLineToPoint:CGPointMake(0, self.frame.size.height)];
+            [bezierPath addLineToPoint:CGPointMake( self.frame.size.width, self.frame.size.height)];
+        }else{
+            [bezierPath moveToPoint:CGPointMake(self.frame.size.width, 0.0f)];
+            [bezierPath addLineToPoint:CGPointMake(self.frame.size.width, self.frame.size.height)];
+            [bezierPath addLineToPoint:CGPointMake(0, self.frame.size.height)];
+        }
+        CAShapeLayer * shapeLayer = [CAShapeLayer layer];
+        shapeLayer.strokeColor = borderColor.CGColor;
+        shapeLayer.fillColor = [UIColor clearColor].CGColor;
+        shapeLayer.path = bezierPath.CGPath;
+        shapeLayer.lineWidth = borderWidth;
+        [self.layer addSublayer:shapeLayer];
+    }
+}
 @end

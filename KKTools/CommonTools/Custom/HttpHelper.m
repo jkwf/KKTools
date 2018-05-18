@@ -60,6 +60,8 @@
     if (alert) {
         [KKAppHelper showHudWithMsg:@"正在加载……"];
     }
+    
+    
     [manager POST:urlStr parameters:parameters progress:progress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
             success(task,responseObject);

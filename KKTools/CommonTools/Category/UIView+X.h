@@ -30,6 +30,18 @@ typedef NS_ENUM(NSInteger, ZVRectCorner) {
     ZVRectCornerBottom      = 8 //下
 };
 
+typedef NS_ENUM(NSInteger, ZVDirection) {
+    ZVDirectionAll  = 0,  //所有
+    ZVDirectionTopLeft     = 1,//左上
+    ZVDirectionTopRight    = 2,//右上
+    ZVDirectionBottomLeft  = 3,//左下
+    ZVDirectionBottomRight = 4,//右下
+    ZVDirectionLeft        = 5,//左
+    ZVDirectionRight       = 6,//右
+    ZVDirectionTop         = 7,//上
+    ZVDirectionBottom      = 8 //下
+};
+
 @interface UIView (X)
 @property (nonatomic, assign) CGFloat left;
 @property (nonatomic, assign) CGFloat top;
@@ -74,4 +86,13 @@ typedef NS_ENUM(NSInteger, ZVRectCorner) {
  @param rectCorner 圆角方向
  */
 - (void)setPositionCornerWithRadius:(CGFloat)radius rectCorner:(ZVRectCorner)rectCorner;
+
+/**
+ 设置某个方向的边框
+ 
+ @param direction <#direction description#>
+ @param borderWidth <#borderWidth description#>
+ @param borderColor <#borderColor description#>
+ */
+- (void)setBorderWithDirection:(ZVDirection)direction borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
 @end
